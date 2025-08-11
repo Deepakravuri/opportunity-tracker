@@ -51,7 +51,7 @@ const AddJobDialog = ({ open, onClose, onSuccess }) => {
       setLoading(true);
       setError('');
 
-      const response = await axios.post('http://localhost:5000/api/job-applications', {
+      const response = await axios.post('https://opportunity-tracker-xta8.onrender.com/api/job-applications', {
         jobId: `manual_${Date.now()}`, // Generate unique ID for manual entries
         jobTitle: formData.jobTitle,
         company: formData.company,

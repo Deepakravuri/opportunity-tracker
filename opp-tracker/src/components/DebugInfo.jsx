@@ -12,7 +12,7 @@ const DebugInfo = () => {
     
     // Test 1: Check if backend is reachable
     try {
-      const response = await axios.get('http://localhost:5000/api/hackathons/all');
+      const response = await axios.get('https://opportunity-tracker-xta8.onrender.com/api/hackathons/all');
       results.push({ test: 'Backend Connection', status: '✅ Success', data: 'Backend is reachable' });
     } catch (error) {
       results.push({ 
@@ -25,7 +25,7 @@ const DebugInfo = () => {
     // Test 2: Check authentication
     if (isAuthenticated && token) {
       try {
-        const response = await axios.get('http://localhost:5000/api/auth/profile', {
+        const response = await axios.get('https://opportunity-tracker-xta8.onrender.com/api/auth/profile', {
           headers: { Authorization: `Bearer ${token}` }
         });
         results.push({ test: 'Authentication', status: '✅ Success', data: 'User is authenticated' });
@@ -43,7 +43,7 @@ const DebugInfo = () => {
     // Test 3: Check interests API
     if (isAuthenticated && token) {
       try {
-        const response = await axios.get('http://localhost:5000/api/interests', {
+        const response = await axios.get('https://opportunity-tracker-xta8.onrender.com/api/interests', {
           headers: { Authorization: `Bearer ${token}` }
         });
         results.push({ 

@@ -61,8 +61,8 @@ const Calendar = () => {
     try {
       setLoading(true);
       const [interestsResponse, applicationsResponse] = await Promise.all([
-        axios.get('http://localhost:5000/api/interests'),
-        axios.get('http://localhost:5000/api/job-applications')
+        axios.get('https://opportunity-tracker-xta8.onrender.com/api/interests'),
+        axios.get('https://opportunity-tracker-xta8.onrender.com/api/job-applications')
       ]);
       
       setInterests(interestsResponse.data.interests);
@@ -78,7 +78,7 @@ const Calendar = () => {
 
   const handleRemoveInterest = async (opportunityId, opportunityType) => {
     try {
-      await axios.post('http://localhost:5000/api/interests', {
+      await axios.post('https://opportunity-tracker-xta8.onrender.com/api/interests', {
         opportunityId,
         opportunityType,
         opportunityName: '', // Not needed for removal
@@ -97,7 +97,7 @@ const Calendar = () => {
 
   const handleRemoveApplication = async (jobId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/job-applications/${jobId}`);
+      await axios.delete(`https://opportunity-tracker-xta8.onrender.com/api/job-applications/${jobId}`);
       fetchData(); // Refresh the job applications list
     } catch (error) {
       console.error('Error removing job application:', error);

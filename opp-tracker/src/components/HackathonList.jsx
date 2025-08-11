@@ -12,7 +12,7 @@ const HackathonList = ({ currentTab, categoryLabels }) => {
   useEffect(() => {
     const fetchHackathons = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/hackathons/all');
+        const response = await axios.get('https://opportunity-tracker-xta8.onrender.com/api/hackathons/all');
         setHackathons(response.data);
       } catch (error) {
         console.error('Error fetching hackathons:', error);

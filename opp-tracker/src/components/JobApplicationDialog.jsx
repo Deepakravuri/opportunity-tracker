@@ -38,7 +38,7 @@ const JobApplicationDialog = ({ open, onClose, job, onSuccess }) => {
       setLoading(true);
       setError('');
 
-      const response = await axios.post('http://localhost:5000/api/job-applications', {
+      const response = await axios.post('https://opportunity-tracker-xta8.onrender.com/api/job-applications', {
         jobId: job._id,
         jobTitle: job.job_title || job.title,
         company: job.company,

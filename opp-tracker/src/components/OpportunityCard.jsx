@@ -130,7 +130,7 @@ const OpportunityCard = ({ item }) => {
       
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/interests/check/${getOpportunityId()}/${getOpportunityType()}`
+          `https://opportunity-tracker-xta8.onrender.com/api/interests/check/${getOpportunityId()}/${getOpportunityType()}`
         );
         setIsInterested(response.data.isInterested);
       } catch (error) {
@@ -160,7 +160,7 @@ const OpportunityCard = ({ item }) => {
       console.log('🎯 Formatted deadline:', formattedDeadline);
       console.log('🎯 Item types:', item.types);
       
-      const response = await axios.post('http://localhost:5000/api/interests', {
+      const response = await axios.post('https://opportunity-tracker-xta8.onrender.com/api/interests', {
         opportunityId: getOpportunityId(),
         opportunityType: getOpportunityType(),
         opportunityName: item.name,

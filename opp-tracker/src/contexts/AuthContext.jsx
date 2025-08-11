@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
     const checkAuth = async () => {
       if (token) {
         try {
-          const response = await axios.get('http://localhost:5000/api/auth/profile');
+          const response = await axios.get('https://opportunity-tracker-xta8.onrender.com/api/auth/profile');
           setUser(response.data.user);
         } catch (error) {
           console.error('Auth check failed:', error);
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', userData);
+      const response = await axios.post('https://opportunity-tracker-xta8.onrender.com/api/auth/register', userData);
       const { user: newUser, token: newToken } = response.data;
       
       setUser(newUser);
@@ -61,7 +61,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (credentials) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/login', credentials);
+      const response = await axios.post('https://opportunity-tracker-xta8.onrender.com/api/auth/login', credentials);
       const { user: loggedInUser, token: newToken } = response.data;
       
       setUser(loggedInUser);
@@ -84,7 +84,7 @@ export const AuthProvider = ({ children }) => {
 
   const updateProfile = async (profileData) => {
     try {
-      const response = await axios.put('http://localhost:5000/api/auth/profile', profileData);
+      const response = await axios.put('https://opportunity-tracker-xta8.onrender.com/api/auth/profile', profileData);
       setUser(response.data.user);
       return { success: true, message: 'Profile updated successfully!' };
     } catch (error) {

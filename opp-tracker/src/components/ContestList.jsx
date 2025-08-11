@@ -12,7 +12,7 @@ const ContestList = ({ currentTab, categoryLabels }) => {
   useEffect(() => {
     const fetchContests = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/contests/all');
+        const response = await axios.get('https://opportunity-tracker-xta8.onrender.com/api/contests/all');
         console.log('🎯 Contests API response:', response.data);
         setContests(response.data);
       } catch (error) {

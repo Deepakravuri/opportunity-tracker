@@ -21,7 +21,7 @@ const JobList = () => {
   const fetchJobs = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/jobs/all');
+      const response = await axios.get('https://opportunity-tracker-xta8.onrender.com/api/jobs/all');
       setJobs(response.data);
       setError(null);
     } catch (err) {
