@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 async function checkCollections() {
   try {
     // Connect to MongoDB
-    await mongoose.connect("mongodb+srv://wanderlust_user:wander123@cluster0.5dksi83.mongodb.net/devfolio_data?retryWrites=true&w=majority", {
+    await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
